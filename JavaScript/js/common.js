@@ -1,12 +1,13 @@
 (function () {
 
-  var currentSum;
+  
   function sum(a) {
-    if (a !== undefined) {
-      currentSum = a;
-    }     
+    var currentSum = 0;
+
     function subSum(b){
-      currentSum += b;
+      if (b !== undefined) {
+        currentSum += b;
+      }
       return subSum;
     }
     subSum.toString = function() {
@@ -16,6 +17,7 @@
   }
   
   console.log(sum(0)(5)(3)(8)(-2));
+  console.log(sum(0)(5)(3)(8)());
   console.log(sum());
 
 
